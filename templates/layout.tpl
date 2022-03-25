@@ -18,7 +18,7 @@
 
 <body>
   <div class="wrapper container">
-  {if $smarty.session.user}
+  {if isset($smarty.session.user)}
     <nav class="navbar navbar-default" role="navigation">
 				<div class="container-fluid">
 					<div class="navbar-header">
