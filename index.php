@@ -49,6 +49,7 @@ echo '
   else {
     include "home.php";
     //$smarty->assign(["ac"=>"home"]);
+    $smarty->assign(["data"=>$data,"ac"=>"home"]);
       $smarty->display("home.tpl");
   }
 

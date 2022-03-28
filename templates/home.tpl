@@ -22,7 +22,7 @@
 {$data_list_note.body=$data_list_note.body}
 {/if}
 <a href="index.php?ac=edit_note&&id={$data_list_note.id_note}" class="list-group-item ">
-								<h4 class="list-group-item-heading text-danger note-title">'{$data_list_note.title}</h4>
+								<h4 class="list-group-item-heading text-danger note-title">{$data_list_note.title}</h4>
 <p class="list-group-item-text">{$data_list_note.body}</p>
 <small> Tạo ngày
 									{$day_created} tháng

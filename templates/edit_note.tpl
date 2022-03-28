@@ -5,13 +5,14 @@
         <div class="col-md-12">
             <h3 class="text-primary">Chỉnh sửa note</h3>
             <div class="alert alert-info">Đã tạo vào ngày
-            <?php
-                // Hiển thị ngày tháng tạo
-                echo $day_created.' tháng
-                     '.$month_created.' năm
-                     '.$year_created.' lúc
-                     '.$hour_created.':'.$min_created;
-            ?>
+         {$date_created = $data_note.date_created}
+	     {$day_created = substr($date_created, 8, 2)} 					 {$month_created = substr($date_created, 5, 2)} 		            {$year_created = substr($date_created, 0, 4)}
+		 {$hour_created = substr($date_created, 11, 2)}
+         {$min_created = substr($date_created, 14, 2)}
+         {$day_created|cat:' tháng
+                     '|cat:$month_created|cat:' năm
+                     '|cat:$year_created|cat:' lúc
+                     '|cat:$hour_created|cat:':'|cat:$min_created}
             </div>
             <form method="POST" onsubmit="return false;" id="formEditNote">
                 <div class="form-group">

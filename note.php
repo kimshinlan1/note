@@ -40,7 +40,7 @@ elseif ($ac == 'edit')
 	$id_edit_note = $db->real_escape_string(@$_POST['id_edit_note']);
 
 	$title_edit_note = trim(htmlentities($title_edit_note));
-	$body_edit_note = htmlentities($body_edit_note);
+	$body_edit_note = trim(htmlentities($body_edit_note));
 	$id_edit_note = trim(htmlentities($id_edit_note));
 
 
