@@ -1,5 +1,6 @@
 <?php
  include "core/init.php";
+
 if($user){
   if(isset($_GET["ac"])){
     $ac=trim($_GET["ac"]);
@@ -17,7 +18,7 @@ if($user){
            if ($db->num_rows($sql_check_id_exist))
            {
       // Include template chỉnh sửa note
-     require_once 'edit-note-form.php';
+     include 'edit_note.php';
 }
                 // Ngược lại không tồn tại và không thuộc quyền sở hữu
 else
@@ -40,16 +41,20 @@ echo '
         }
     }else
      include "$ac.php";
+    $smarty->assign(["ac"=>$ac]);
+    $smarty->display("$ac.tpl");
   }
 
   // neu khong co action gi
   else {
-
     include "home.php";
+    //$smarty->assign(["ac"=>"home"]);
+      $smarty->display("home.tpl");
   }
 
 }else {
   include "signin-up.php";
+
 }
 //$smarty->assign(["user"=>1,"ac"=>$ac]);
 //$smarty->display("index.tpl");

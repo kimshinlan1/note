@@ -1,9 +1,13 @@
 {extends file="layout.tpl"}
+{block name=link_css}
+  <link rel="stylesheet" href="./css/{$ac}.css">
+{/block}
+
 {block name=body}
 	<div class="row">
 		<div class="col-md-12">
 			<div  class="text-primary h3 text-center">Danh sách các note</h3>
-			<div class="list-group">
+			<div class="list-group group-notes">
 
 {foreach $data as $key => $data_list_note}
 						{$date_created = $data_list_note.date_created}
@@ -17,8 +21,8 @@
 {else}
 {$data_list_note.body=$data_list_note.body}
 {/if}
-<a href="index.php?ac=edit_note&&id={$data_list_note.id_note} class="list-group-item ">
-								<h4 class="list-group-item-heading text-danger">'{$data_list_note.title}</h4>
+<a href="index.php?ac=edit_note&&id={$data_list_note.id_note}" class="list-group-item ">
+								<h4 class="list-group-item-heading text-danger note-title">'{$data_list_note.title}</h4>
 <p class="list-group-item-text">{$data_list_note.body}</p>
 <small> Tạo ngày
 									{$day_created} tháng

@@ -18,6 +18,6 @@ echo '
 <div class="alert alert-info">Hiện tại bạn chưa có note nào.</div>';
 }
 
-$smarty->assign(["data"=>$data]);
+$smarty->assign(["data"=>$data,"ac"=>"home"]);
 $smarty->display("home.tpl");
 ?>

@@ -1,0 +1,10 @@
+*{
+  font-size:18px;
+}
+body .container{
+  background:lightblue;
+
+}
+.group-notes .list-group-item-heading.note-title{
+  background:white;
+}
